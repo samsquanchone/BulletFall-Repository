@@ -6,5 +6,8 @@ using UnityEngine;
 public class WaveData : ScriptableObject
 {
     public int enemyCount = 5;
+    public int enemiesRemaining;
     public float spawnTimerLimit= 5f;
-}
+    public double score;
+    public int waveNumber;
+}    

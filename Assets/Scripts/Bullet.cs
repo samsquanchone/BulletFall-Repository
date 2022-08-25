@@ -5,19 +5,19 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 8f;
-    public float lifeDuration = 2f;
+    public float lifeDuration;
     private float lifeTimer;
 
     void Start()
     {
-        lifeTimer = lifeDuration;
+        lifeTimer = lifeDuration; //Setting local variable to accessable public variable value
     }
    
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        MoveBullet();
+        MoveBullet(); 
         DestroyBullet();
     }
 
@@ -38,6 +38,15 @@ public class Bullet : MonoBehaviour
        if(lifeTimer <= 0f)
         {
            this.gameObject.SetActive(false);
+           ResetLifeTimer();
+
         }
     }
+
+    //Reset bullet lifeTimer
+    void ResetLifeTimer()
+    {
+       lifeTimer = lifeDuration;
+    }
+
 }
