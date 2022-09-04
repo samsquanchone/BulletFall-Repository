@@ -10,4 +10,6 @@ public class WaveData : ScriptableObject
     public float spawnTimerLimit= 5f;
     public double score;
     public int waveNumber;
+
+   
 }    

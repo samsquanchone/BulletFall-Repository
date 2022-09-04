@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         DestroyBullet();
     }
 
-    void MoveBullet()
+   protected virtual void MoveBullet()
     {
        //make bullet move
 

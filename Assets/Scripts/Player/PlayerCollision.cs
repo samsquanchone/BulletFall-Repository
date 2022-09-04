@@ -17,10 +17,11 @@ public class PlayerCollision : MonoBehaviour
 
     private void ProcessCollision(GameObject collider)
     {
-        if(collider.gameObject.CompareTag("Enemy"))
+        if(collider.gameObject.CompareTag("Enemy") || collider.gameObject.CompareTag("EnemyBullet"))
         {
             DamagePlayer();
         }
+
     }
 
     private void DamagePlayer()
@@ -33,6 +34,8 @@ public class PlayerCollision : MonoBehaviour
         PlayerDead();
       }
     }
+
+   
 
     public void PlayerDead()
     {

@@ -9,6 +9,8 @@ public class EnemyData :ScriptableObject
     public float enemyHealth;
     public float enemyDamage;
     public double pointsValue;
+    public float fireRate;
+  
 
     
     

@@ -6,7 +6,9 @@ public class EnemyCollision : MonoBehaviour
 {
     public EnemyData enemyData;
     public WaveData waveData;
+    public PickUpData pickUpData;
     public float enemyHealth;
+    
 
      private void Start()
     {
@@ -32,9 +34,18 @@ public class EnemyCollision : MonoBehaviour
 
       if(enemyHealth <= 0)
       {
+         DeathLocation();
          this.gameObject.SetActive(false);
          waveData.enemiesRemaining--;
          waveData.score += enemyData.pointsValue;
+         pickUpData.spawn = true;
+         Debug.Log("true");
       }
+    }
+
+    public void DeathLocation()
+    {
+       Vector3 deathPosition = this.gameObject.transform.position;
+       pickUpData.spawnLocation = deathPosition;
     }
 }

@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 4.0f;
+    [SerializeField] private float movementSpeed = 5.0f;
     [SerializeField] private float rotationSpeed;
     public Transform gunMuzzle;
     public GameObject bulletPrefab;
+    public PlayerData playerData;
 
-    
+    void Awake()
+    {
+        playerData.playerSpeed = movementSpeed;
+    }
     
 
     // Update is called once per frame
@@ -27,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movementDirection = new Vector3(horizontalInput,0f,  verticalInput);
         movementDirection.Normalize();
-        transform.Translate(movementDirection * movementSpeed * Time.deltaTime, Space.World);
+        transform.Translate(movementDirection * playerData.playerSpeed * Time.deltaTime, Space.World);
         if (movementDirection != Vector3.zero)
         {
             Quaternion toRotate = Quaternion.LookRotation(movementDirection, Vector3.up);
