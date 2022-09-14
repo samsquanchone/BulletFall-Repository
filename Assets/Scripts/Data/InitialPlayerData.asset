@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: InitialPlayerData
   m_EditorClassIdentifier: 
   playerHealth: 100
-  playerSpeed: 2
+  playerSpeed: 5
+  coolDown: 0.8

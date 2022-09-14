@@ -28,6 +28,7 @@ public class PickUpCollission : MonoBehaviour
     {
         if(collider.gameObject.CompareTag("Player") && playerData.playerHealth < 100)
         {
+            EventManager.TriggerEvent("PickUpHealth");
             HealPlayer();
             Destroy();
             

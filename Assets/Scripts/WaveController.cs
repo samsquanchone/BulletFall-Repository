@@ -15,17 +15,20 @@ public class WaveController : MonoBehaviour
     public GameObject[] pickUps;
     public EnemyData enemyData;
     private int _roll;
-     int pickUpsIndex;
+    int pickUpsIndex;
+   
 
      //Set local enemyNumber to dataFile enemyData
     void Awake()
     {
+       
         waveData.enemyCount = 5;
         
         enemyCount = waveData.enemyCount;
         waveData.enemiesRemaining = 5;
         waveData.waveNumber = 1;
         pickUpData.spawn = false;
+        
      
     }
  // Used for non time-crucial processing, i.e spawning offscreen
@@ -119,7 +122,7 @@ public class WaveController : MonoBehaviour
             
            
         
-       Instantiate(pickUps[pickUpsIndex], pickUpData.spawnLocation, Quaternion.identity);
+        Instantiate(pickUps[pickUpsIndex], pickUpData.spawnLocation, Quaternion.identity);
       
        
 

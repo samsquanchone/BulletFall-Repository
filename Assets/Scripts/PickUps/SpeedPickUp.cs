@@ -39,6 +39,7 @@ public class SpeedPickUp : PickUpCollission
     {
         if(collider.gameObject.CompareTag("Player"))
         {
+          EventManager.TriggerEvent("PickUpSpeed");
           BuffPlayerSpeed();
           Destroy();
 

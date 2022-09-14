@@ -7,5 +7,6 @@ public class PlayerData : ScriptableObject
 {
     public float playerHealth;
     public float playerSpeed;
+    public float coolDown;
 
 }

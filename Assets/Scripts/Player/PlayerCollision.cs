@@ -35,10 +35,10 @@ public class PlayerCollision : MonoBehaviour
       }
     }
 
-   
-
     public void PlayerDead()
     {
         gameObject.SetActive(false);
+        EventManager.TriggerEvent("StopGameMusic");
+        EventManager.TriggerEvent("GameOverMusic");
     }
 }
